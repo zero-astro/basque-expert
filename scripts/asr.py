@@ -13,7 +13,9 @@ def transcribe(audio_path: str) -> str:
     """Transcribe audio file using Parakeet TDT model."""
     
     # Model path - use the directory with actual ONNX files
-    model_dir = "/home/urtzai/.openclaw/skills/basque-expert/models/asr"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    skill_dir = os.path.dirname(script_dir)
+    model_dir = os.path.join(skill_dir, "models", "asr")
     
     if not os.path.exists(model_dir):
         raise FileNotFoundError(f"Model directory not found: {model_dir}")
