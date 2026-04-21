@@ -1,1 +1,16 @@
-venv
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Model files (too large for GitHub)
+models/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
