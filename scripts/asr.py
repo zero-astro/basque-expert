@@ -50,10 +50,8 @@ def transcribe(audio_path: str) -> str:
         samples = resample(samples, target_samples)
     
     stream.accept_waveform(
-        sherpa_onnx.AudioData(
-            samples=samples.astype(np.float32),
-            sample_rate=16000
-        )
+        sample_rate=16000,
+        waveform=samples.astype(np.float32).tolist()
     )
     
     # Decode
